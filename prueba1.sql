@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-12-2017 a las 20:41:18
+-- Tiempo de generación: 06-12-2017 a las 03:58:58
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -34,17 +34,19 @@ CREATE TABLE IF NOT EXISTS `numeros` (
   `dos` varchar(40) NOT NULL,
   `tres` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `numeros`
 --
 
 INSERT INTO `numeros` (`id`, `uno`, `dos`, `tres`) VALUES
-(1, 'aaa', 'aaa', 'aaa'),
-(2, 'bbb', 'bbb', 'bbb'),
-(3, 'ccc', 'ccc', 'ccc'),
-(4, 'ddd', 'ddd', 'ddd');
+(1, 'uno', 'dos', 'tres'),
+(2, '1', '2', '3'),
+(3, 'I', 'II', 'III'),
+(4, 'one', 'two', 'three'),
+(5, 'eins', 'zwei', 'drei'),
+(6, 'un', 'deux', 'trois');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
