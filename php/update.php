@@ -16,6 +16,6 @@ for($i=0;$i<sizeof($id);++$i)
 	$query = $con->query($sql);
 }
 
-print "<script>alert(\"Actualizado Exitosamente.\");window.location='tabla2.php';</script>";
+print "<script>alert(\"Actualizado Exitosamente.\");window.location='../tabla2.php';</script>";
 
 ?>

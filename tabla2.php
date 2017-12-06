@@ -22,12 +22,44 @@
 </head>
 <body>
 	<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>INGRESAR NUEVA FILA</h2>
+
+			<div class="modal-body">
+				<form role="form" method="post" action="php/insert.php">
+
+					<div class="form-group">
+						<label>UNO</label>
+						<input type="text" class="form-control" name="one" required>
+					</div>
+
+					<div class="form-group">
+						<label>DOS</label>
+						<input type="text" class="form-control" name="two" required>
+					</div>
+
+					<div class="form-group">
+						<label >TRES</label>
+						<input type="text" class="form-control" name="tree" required>
+					</div>
+					<button type="submit"  class="btn btn-success perro">Guardar</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+	<br>
+	<br>
+	<br>
+	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h2>ACTUALIZAR FILA</h2>
-				<form  method="POST" action="update.php">
+				<h2>FILAS EXISTENTES</h2>
+				<form  method="POST" action="tabla-actualizar.php">
 					<?php
-					include "conexion.php";
+					include "php/conexion.php";
 					$user_id=null;
 
 					$sql1= "select id,uno,dos,tres from numeros";
@@ -48,14 +80,14 @@
 									<td><?php echo $r["id"];
 					echo '<input type="text" class="sr-only form-control" name="id[]" value="'.$r["id"].'" />';//los inputs no pueden estar disabled o no se guardan en las variables
 					?></td>
-					<td><?php 
-					echo '<input type="text" class="form-control luna" name="uno[]" value="'.$r["uno"].'" />';
+					<td><?php echo $r["uno"];
+					echo '<input type="text" class="sr-only form-control luna" name="uno[]" value="'.$r["uno"].'" />';
 					?></td>
-					<td><?php 
-					echo '<input type="text" class="form-control luna" name="dos[]"  value="'.$r["dos"].'" />';
+					<td><?php echo $r["dos"];
+					echo '<input type="text" class="sr-only form-control luna" name="dos[]"  value="'.$r["dos"].'" />';
 					?></td>
-					<td><?php 
-					echo '<input type="text" class="form-control luna" name="tres[]" value="'.$r["tres"].'" />';
+					<td><?php echo $r["tres"];
+					echo '<input type="text" class="sr-only form-control luna" name="tres[]" value="'.$r["tres"].'" />';
 					?></td>
 				</tr>
 				
@@ -65,42 +97,13 @@
 	<?php else:?>
 		<p class="alert alert-warning">No hay resultados</p>
 	<?php endif;?>
-	<button type="submit" class="btn btn-success sol">guardar</button>
+
+	<form method="POST" action="tabla-actualizar.php">
+	<button type="submit" class="btn btn-warning sol">Modificar</button>
+	</form>
 </form>
 </div>
 </div>
-</div>
-<br>
-<br>
-<br>
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<h2>INGRESAR NUEVA FILA</h2>
-
-			<div class="modal-body">
-				<form role="form" method="post" action="insert.php">
-
-					<div class="form-group">
-						<label>UNO</label>
-						<input type="text" class="form-control" name="one" required>
-					</div>
-
-					<div class="form-group">
-						<label>DOS</label>
-						<input type="text" class="form-control" name="two" required>
-					</div>
-
-					<div class="form-group">
-						<label >TRES</label>
-						<input type="text" class="form-control" name="tree" required>
-					</div>
-					<button type="submit"  class="btn btn-danger perro">Guardar</button>
-				</form>
-			</div>
-
-		</div>
-	</div>
 </div>
 </body>
 </html>
